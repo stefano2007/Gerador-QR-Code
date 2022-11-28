@@ -7,7 +7,7 @@
     if (Model.QrCode != null)
     {
         var base64 = Convert.ToBase64String(Model.QrCode);
-        imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+        imgSrc = String.Format("data:image/png;base64,{0}", base64);
 
     }
 }
@@ -41,7 +41,7 @@
         @Html.TextBoxFor(m => m.Valor, new { @class = "form-control"})
         @Html.ValidationMessageFor(m => m.Valor)
     </div>
-    <div class="row">
+    <div class="form-group">
         <button class="btn btn-success">
             Gerar QRCode
         </button>
@@ -50,8 +50,17 @@
 @if (Model.Processado)
 {
     <div class="row">
-    <img src="@imgSrc" width="300px" />
-    @(Html.TextAreaFor(m => m.StrQrCode, new { @class = "form-control" }))
+        <div class="mt-2 mx-auto">
+            <div class="col">
+                <img src="@imgSrc" style="width:300px" />
+            </div>
+            <div class="col py-2">
+                <a class="btn btn-info" download="qrcode-pix" href="@imgSrc">Baixar QRCode</a>
+            </div>
+            <div class="col">
+                @(Html.TextAreaFor(m => m.StrQrCode, new { @class = "form-control" }))
+            </div>            
+        </div>
     </div>
 }
 

@@ -30,6 +30,7 @@ namespace CriadorQRCode.Models
             NomeRazao = data.NomeRazao;
             Municipio = data.Municipio;
             Valor = data.Valor;
+            Tipo = data.Tipo;
         }
 
         public GerarPix(string urlChavePix)
@@ -90,7 +91,7 @@ namespace CriadorQRCode.Models
                     chave = "+55" + chave;
                 }
 
-                return "0114"+ chave;
+                return "01" + formatString(chave.Length) + chave;
             }
         }
         string Tipo26
