@@ -11,13 +11,14 @@
 
     }
 }
+<link href="~/css/QRCodeWifi.css" rel="stylesheet" />
 
 <div class="text-center">
     <h1 class="display-4">Gerador de QRCode Wifi</h1>
 </div>
 <hr />
 <form class="form-horizontal" method="POST">
-    
+
     <div class="form-group">
         @Html.LabelFor(m => m.ssid)
         @Html.TextBoxFor(m => m.ssid, new { @class = "form-control", maxlength = "99" })
@@ -45,17 +46,26 @@
 </form>
 @if (Model.Processado)
 {
+    <hr />
+    <div id="card-qrcode" class="card mx-auto">
+        <div class="card-body">
+            <div class="text-center pb-3">
+                <img id="icone-wifi" class="card-img px-5" src="/img/sinal-wifi.png" alt="Wi-fi" />
+                <img id="img-qrcode" class="card-img" src="@imgSrc" />
+            </div>
+
+            <h2 class="text-center">Para acessar o Wi-Fi, aponte o</h2>
+            <h2 class="text-center">seu celular e leia o QR Code</h2>
+        </div>
+    </div>
+    <br />
+    <br />
     <div class="row">
-        <div class="mt-2 mx-auto">
-            <div class="col">
-                <img src="@imgSrc" style="width:300px" />
-            </div>
-            <div class="col py-2">
-                <a class="btn btn-info" download="qrcode-wifi" href="@imgSrc">Baixar QRCode</a>
-            </div>
-            <div class="col">
-                @(Html.TextAreaFor(m => m.StrQrCode, new { @class = "form-control" }))
-            </div>
+        <div class="col py-2">
+            <a id="link-download-qrcode" class="btn btn-info" download="qrcode-pix" href="@imgSrc">Baixar QRCode</a>
+        </div>
+        <div class="col">
+            @(Html.TextAreaFor(m => m.StrQrCode, new { @class = "form-control" }))
         </div>
     </div>
 }
