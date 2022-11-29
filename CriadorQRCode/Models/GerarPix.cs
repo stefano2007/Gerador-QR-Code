@@ -120,7 +120,7 @@ namespace CriadorQRCode.Models
         {
             get
             {
-                string valor = Valor.ToString("f").Replace(",",".");
+                string valor = Valor.ToString("0.##").Replace(",",".");
                 string text = Valor > 0 ? "54" +formatString(valor.Length) + valor : ""; 
 
                 return text;
