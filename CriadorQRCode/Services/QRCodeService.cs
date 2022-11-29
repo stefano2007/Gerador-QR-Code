@@ -10,13 +10,21 @@ namespace CriadorQRCode.Services
         {
             conversor = _conversor;
         }
-        public DadosPIXView GerarChavePix(DadosPIXView data)
+        public DadoPIXViewModel GerarChavePix(DadoPIXViewModel data)
         {
             GerarPix gerarPix = new GerarPix(data);
             string strChavePix = gerarPix.StrChavePix();
 
             data.StrQrCode = strChavePix;
-            data.QrCode = conversor.GerarQrCode(strChavePix, false);
+            data.QrCode = conversor.GerarQrPixCode(strChavePix, false);
+            data.Processado = true;
+
+            return data;
+        }
+
+        public DadoWifiViewModel GerarWifi(DadoWifiViewModel data)
+        {            
+            data.QrCode = conversor.GerarQrWifiCode(data, false);
             data.Processado = true;
 
             return data;

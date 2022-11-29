@@ -24,7 +24,7 @@ namespace CriadorQRCode.Models
                  */
 
 
-        public GerarPix(DadosPIXView data)
+        public GerarPix(DadoPIXViewModel data)
         {
             ChavePix = data.ChavePix;
             NomeRazao = data.NomeRazao;

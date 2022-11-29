@@ -1,0 +1,62 @@
+﻿@model CriadorQRCode.Models.DadoWifiViewModel
+@{
+    ViewData["Title"] = "Gerador de QRCode Wifi";
+
+    string imgSrc = "";
+
+    if (Model.QrCode != null)
+    {
+        var base64 = Convert.ToBase64String(Model.QrCode);
+        imgSrc = String.Format("data:image/png;base64,{0}", base64);
+
+    }
+}
+
+<div class="text-center">
+    <h1 class="display-4">Gerador de QRCode Wifi</h1>
+</div>
+<hr />
+<form class="form-horizontal" method="POST">
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.ssid)
+        @Html.TextBoxFor(m => m.ssid, new { @class = "form-control", maxlength = "99" })
+        @Html.ValidationMessageFor(m => m.ssid)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.password)
+        @Html.TextBoxFor(m => m.password, new { @class = "form-control", maxlength = "25" })
+        @Html.ValidationMessageFor(m => m.password)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.isHiddenSSID)
+        @Html.CheckBoxFor(m => m.isHiddenSSID, new { @class = "form-control", maxlength = "15" })
+        @Html.ValidationMessageFor(m => m.isHiddenSSID)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Tipo)
+        @Html.DropDownListFor(m => m.Tipo, (SelectList)ViewBag.TipoAuthWifi, "Selecione...", new { @class = "selectpicker form-control", data_show_subtext = "true", data_live_search = "true" })
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success">
+            Gerar QRCode
+        </button>
+    </div>
+</form>
+@if (Model.Processado)
+{
+    <div class="row">
+        <div class="mt-2 mx-auto">
+            <div class="col">
+                <img src="@imgSrc" style="width:300px" />
+            </div>
+            <div class="col py-2">
+                <a class="btn btn-info" download="qrcode-wifi" href="@imgSrc">Baixar QRCode</a>
+            </div>
+            <div class="col">
+                @(Html.TextAreaFor(m => m.StrQrCode, new { @class = "form-control" }))
+            </div>
+        </div>
+    </div>
+}
+

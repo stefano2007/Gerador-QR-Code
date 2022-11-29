@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stefanos\\source\\repos\\CriadorQRCode\\CriadorQRCode\\CriadorQRCode.csproj": {}
+    "C:\\Users\\stefa\\source\\repos\\Gerador-QR-Code\\CriadorQRCode\\CriadorQRCode.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stefanos\\source\\repos\\CriadorQRCode\\CriadorQRCode\\CriadorQRCode.csproj": {
+    "C:\\Users\\stefa\\source\\repos\\Gerador-QR-Code\\CriadorQRCode\\CriadorQRCode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stefanos\\source\\repos\\CriadorQRCode\\CriadorQRCode\\CriadorQRCode.csproj",
+        "projectUniqueName": "C:\\Users\\stefa\\source\\repos\\Gerador-QR-Code\\CriadorQRCode\\CriadorQRCode.csproj",
         "projectName": "CriadorQRCode",
-        "projectPath": "C:\\Users\\stefanos\\source\\repos\\CriadorQRCode\\CriadorQRCode\\CriadorQRCode.csproj",
-        "packagesPath": "C:\\Users\\stefanos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stefanos\\source\\repos\\CriadorQRCode\\CriadorQRCode\\obj\\",
+        "projectPath": "C:\\Users\\stefa\\source\\repos\\Gerador-QR-Code\\CriadorQRCode\\CriadorQRCode.csproj",
+        "packagesPath": "C:\\Users\\stefa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefa\\source\\repos\\Gerador-QR-Code\\CriadorQRCode\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\stefanos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,10 +51,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -63,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
